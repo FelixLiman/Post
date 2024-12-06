@@ -37,7 +37,7 @@
 
     NSURLSession *session = [NSURLSession sessionWithConfiguration: [NSURLSessionConfiguration defaultSessionConfiguration]];
     [[session dataTaskWithRequest: request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSDictionary *object = [NSJSONSerialization
+        NSDictionary *objects = [NSJSONSerialization
                                 JSONObjectWithData: data
                                 options: 0
                                 error: &error];
@@ -45,19 +45,21 @@
         if(! error) {
             NSMutableArray *array = [[NSMutableArray alloc] init];
 
-            for (NSString *dictionaryKey in object) {
+            for (NSObject *object in objects) {
                 PostModel *post = [[PostModel alloc] init];
-                post.userId = [[object valueForKey:dictionaryKey]objectForKey:@"userId"];
-                post.postId = [[object valueForKey:dictionaryKey]objectForKey:@"id"];
-                post.title = [[object valueForKey:dictionaryKey]objectForKey:@"title"];
-                post.body = [[object valueForKey:dictionaryKey]objectForKey:@"body"];
+                post.userId = [object valueForKey:@"userId"];
+                post.postId = [object valueForKey:@"id"];
+                post.title = [object valueForKey:@"title"];
+                post.body = [object valueForKey:@"body"];
                 [array addObject: post];
             }
             
             self.postData = array;
             self.postViewData = array;
             
-            [self.tableView reloadData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
         } else {
             NSLog(@"Error in parsing JSON");
         }
@@ -67,7 +69,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = UIColor.greenColor;
+    self.view.backgroundColor = UIColor.whiteColor;
     self.title = @"Posts";
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     
@@ -88,7 +90,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"cellId" forIndexPath: indexPath];
     
     cell.textLabel.text = self.postViewData[indexPath.item].title;
-    cell.detailTextLabel.text = self.postViewData[indexPath.item].body;
+    cell.detailTextLabel.text = [NSString stringWithFormat: @"%@", self.postViewData[indexPath.item].userId];
     
     return cell;
 }
