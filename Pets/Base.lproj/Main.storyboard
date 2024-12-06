@@ -44,13 +44,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ur-yj-vcB">
-                                <rect key="frame" x="16" y="164.33333333333334" width="393" height="28.666666666666657"/>
+                                <rect key="frame" x="16" y="164.33333333333334" width="361" height="28.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsY-0m-YGg">
-                                <rect key="frame" x="16.000000000000004" y="209" width="41.333333333333343" height="20.333333333333343"/>
+                                <rect key="frame" x="16" y="209" width="361" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -60,10 +60,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9Ur-yj-vcB" firstAttribute="leading" secondItem="9ey-hL-9gc" secondAttribute="leading" id="B5h-lp-JDG"/>
-                            <constraint firstItem="OcH-iJ-viL" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RsY-0m-YGg" secondAttribute="trailing" symbolic="YES" id="G0C-IO-dd6"/>
+                            <constraint firstItem="OcH-iJ-viL" firstAttribute="trailing" secondItem="RsY-0m-YGg" secondAttribute="trailing" constant="16" id="G0C-IO-dd6"/>
                             <constraint firstItem="RsY-0m-YGg" firstAttribute="top" secondItem="9Ur-yj-vcB" secondAttribute="bottom" constant="16" id="IJI-EJ-SQw"/>
                             <constraint firstItem="9ey-hL-9gc" firstAttribute="top" secondItem="OcH-iJ-viL" secondAttribute="top" constant="32" id="Nvz-ka-gjt"/>
-                            <constraint firstItem="9Ur-yj-vcB" firstAttribute="trailing" secondItem="OcH-iJ-viL" secondAttribute="trailing" constant="16" id="Nz5-Qf-dVb"/>
+                            <constraint firstItem="9Ur-yj-vcB" firstAttribute="trailing" secondItem="OcH-iJ-viL" secondAttribute="trailing" constant="-16" id="Nz5-Qf-dVb"/>
                             <constraint firstItem="OcH-iJ-viL" firstAttribute="trailing" secondItem="iJh-iQ-Nfv" secondAttribute="trailing" constant="15.999999999999943" id="PRb-fZ-un6"/>
                             <constraint firstItem="9Ur-yj-vcB" firstAttribute="top" secondItem="iJh-iQ-Nfv" secondAttribute="bottom" constant="16" id="Wbg-WQ-amX"/>
                             <constraint firstItem="iJh-iQ-Nfv" firstAttribute="leading" secondItem="OcH-iJ-viL" secondAttribute="leading" constant="16" id="kXE-e2-3Nx"/>

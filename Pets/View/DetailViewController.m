@@ -26,9 +26,9 @@
     self.view.backgroundColor = UIColor.whiteColor;
     self.title = @"Post Detail";
     
-    self.postUserIdLbl.text = [NSString stringWithFormat: @"%@", self.post.userId];
+    self.postUserIdLbl.text = [NSString stringWithFormat: @"User Id: %@", self.post.userId];
     self.postTitleLbl.text = self.post.title;
-    self.postIdLbl.text = [NSString stringWithFormat: @"%@", self.post.postId];
+    self.postIdLbl.text = [NSString stringWithFormat: @"Post Id: %@", self.post.postId];
     self.postBodyLbl.text = self.post.body;
     // Do any additional setup after loading the view from its nib.
 }

@@ -77,7 +77,7 @@
     
     [self setupSearchBar];
     
-    [self.tableView registerClass: UITableViewCell.class forCellReuseIdentifier:@"cellId"];
+//    [self.tableView registerClass: UITableViewCell.class forCellReuseIdentifier:@"cellId"];
     // Do any additional setup after loading the view.
 }
 
@@ -87,10 +87,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"cellId" forIndexPath: indexPath];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cellReuseID"];
     
     cell.textLabel.text = self.postViewData[indexPath.item].title;
-    cell.detailTextLabel.text = [NSString stringWithFormat: @"%@", self.postViewData[indexPath.item].userId];
+    cell.detailTextLabel.text = [NSString stringWithFormat: @"Post ID: %@", self.postViewData[indexPath.item].postId];
     
     return cell;
 }
