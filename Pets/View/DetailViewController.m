@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = UIColor.whiteColor;
-    self.title = self.post.title;
+    self.title = @"Post Detail";
     
     self.postUserIdLbl.text = [NSString stringWithFormat: @"%@", self.post.userId];
     self.postTitleLbl.text = self.post.title;
